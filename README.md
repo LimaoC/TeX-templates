@@ -1,16 +1,14 @@
-![Assignment TeXplate 1](assets/assignment-texplate-1.png)
+![Assignment Template 1](assets/assignment-1.png)
 
 ---
 
-<h3 align="center">Limao's TeXplates</h3>
+<h3 align="center">TeX Templates</h3>
 
 This repo is a collection of my custom LaTeX templates.
 
-- [assignment-texplate](/assignment-texplate/): A template for assignments and homework sets.
-- [cheatsheet-texplate](/cheatsheet-texplate/): A template for cheatsheets.
-- [limao-preamble](/preamble-texplate/): A general preamble with commonly-used packages imported and some helpful macros defined.
-
-Aside: If you're interested in using TeX snippets, mine can be found [here](https://github.com/LimaoC/dotfiles/blob/main/.config/nvim/UltiSnips/tex.snippets).
+- [assignment-template](/assignment-template/) (package): A template for assignments and homework sets.
+- [cheatsheet-template](/cheatsheet-template/) (preamble): A template for cheatsheets.
+- [limao-preamble](/limao-preamble/): A general preamble with commonly-used packages imported and some helpful macros defined. I don't have too many macros defined, since I prefer to use snippets (found [here](https://github.com/LimaoC/dotfiles/blob/main/nvim/.config/nvim/lua/snippets/tex.lua)).
 
 ## Installation
 
@@ -18,29 +16,27 @@ Follow the steps below to install the templates in this repository.
 
 1. Clone the repository to some local directory:
     ```
-    git clone git@github.com:LimaoC/TeXplate
+    git clone git@github.com:LimaoC/TeX-templates
     ```
 2. Create symlinks for each template you'd like in your TeX home directory. Your TeX home directory can be found using the following command:
     ```
     kpsewhich -var-value=TEXMFHOME
     ```
-    For linux users, this will usually be `~/texmf/`. If the path to the cloned repository is `path/TeXplate`, you'd create your symlinks like so:
+    For linux users, this will usually be `~/texmf/`. If the path to the cloned repository is `path/TeX-templates`, you'd create your symlinks like so:
     ```
-    cd ~/texmf/tex/latex
-    ln -s path/TeXplate/assignment-texplate assignment-texplate
-    ln -s path/TeXplate/limao-preamble limao-preamble
+    mkdir -p ~/texmf/tex/latex
+    ln -s path/TeX-templates/assignment-template ~/texmf/tex/latex/assignment-template
+    ln -s path/TeX-templates/cheatsheet-template ~/texmf/tex/latex/cheatsheet-template
+    ln -s path/TeX-templates/limao-preamble ~/texmf/tex/latex/limao-preamble
     ```
     For more information about installing LaTeX packages this way, see https://en.wikibooks.org/wiki/LaTeX/Installing_Extra_Packages.
 
-    **NOTE: All packages rely on `limao-preamble` being installed.**
-    
 Storing the templates in your TeX home directory lets you conveniently import them from anywhere on your machine with
 ```tex
 \usepackage{assignment-texplate}  % for the package templates
+\input{cheatsheet-preamble}       % for the cheatsheet preamble
 \input{limao-preamble}            % for the general preamble file
 ```
-
-Symlinking makes it easy to grab any updates that I make to the templates - just use `git pull` and the templates will stay up-to-date.
 
 ## Usage
 

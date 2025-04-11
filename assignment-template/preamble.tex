@@ -1,27 +1,26 @@
 \documentclass[12pt]{article}
 
-\usepackage{assignment-texplate}
+\usepackage{assignment-template}
 
-\input{limao-preamble}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{titling}
 
 % ===== CHANGE YOUR DETAILS HERE ============================================= %
 
 \newcommand{\authorName}{YourName}
-\newcommand{\studentID}{YourStudentID}
-\newcommand{\tutorialGroup}{YourTutorialGroup}
 \newcommand{\courseCode}{MATH1001}
 \newcommand{\assignmentName}{Assignment 1}
-\newcommand{\dueDate}{1pm Monday, 1st January 2023}
 
 % ===== Page title, header, footer setup ===================================== %
 
-\author{\authorName \ -- \studentID \ -- \tutorialGroup}
+\author{\authorName}
 \title{\courseCode \space \assignmentName}
 
 \pagestyle{fancy}
 \fancyhf{}
 \lhead{\courseCode \space \assignmentName}
-\rhead{Due \dueDate}
+\rhead{\theauthor}
 \rfoot{Page \thepage}
 
 % ===== Formatting =========================================================== %
